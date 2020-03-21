@@ -14,6 +14,7 @@ public class swipe extends GestureDetector.SimpleOnGestureListener{
     // Maximal x and y axis swipe distance.
     private static int MAX_SWIPE_DISTANCE_X = 1000;
     private static int MAX_SWIPE_DISTANCE_Y = 1000;
+    private static String direction;
 
     Context context;
 
@@ -65,11 +66,13 @@ public class swipe extends GestureDetector.SimpleOnGestureListener{
             if(deltaX > 0)
             {
                 Toast.makeText(context,"swiped to left",Toast.LENGTH_SHORT).show();
+                setDirection("left");
                 Log.d("Tag","swiped to left");
             }else
             {
 
                 Toast.makeText(context,"swiped to right",Toast.LENGTH_SHORT).show();
+                setDirection("right");
                 Log.d("Tag","swiped to right");
 
             }
@@ -82,5 +85,14 @@ public class swipe extends GestureDetector.SimpleOnGestureListener{
 
     }
 
+    public void setDirection(String mdirection){
+       this.direction=mdirection;
+
+
+    }
+
+    public String getDirection(){
+       return  direction;
+    }
 
 }
