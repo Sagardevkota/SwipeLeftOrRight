@@ -18,7 +18,7 @@ implementation 'com.github.Sagardevkota:SwipeLeftOrRight:v1.0'
 
 ## **Demo**
 
-<img src="Screenshot_1584855606.png" height="300px" width="200px" />
+<img src="Screenshot_1584855606.png" height="500px" width="400px" />
 
 ## **Methods**
 
