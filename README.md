@@ -9,12 +9,16 @@ You can easily recognize user gesture and handle it in your code
 implementation 'com.github.Sagardevkota:SwipeLeftOrRight:v1.0'
 ```
 
-Features
+## **Features**
 
 * Swipe Left
 * Swipe Right
 * Swipe Up
 * Swipe Down
+
+## **Demo**
+
+![Screenshot] (Screenshot_1584855606.png )
 
 ## **Methods**
 
