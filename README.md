@@ -26,7 +26,7 @@ getGesture();
 First Initialize GestureDetector instance and pass the context(this) and instance of our class(which also requires context as an argument) as an argument.
 
 
-```
+```java
 
 GestureDetector mGestureDetector = new GestureDetector(this, new swipe(getApplicationContext()));
 
@@ -36,7 +36,7 @@ GestureDetector mGestureDetector = new GestureDetector(this, new swipe(getApplic
 
 Then add touch listener to your view where you want to handle user's gestures
 
-```
+```java
 
    myview.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -51,7 +51,7 @@ Then add touch listener to your view where you want to handle user's gestures
 ## **Override onTouchEvent method in your activity and check if the event was consumed or not**
 
 
-      ``` java
+      ```java
 
 
     @Override
