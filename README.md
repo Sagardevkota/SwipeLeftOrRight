@@ -5,8 +5,9 @@
 You can easily recognize user gesture and handle it in your code
 
 
-
+```
 implementation 'com.github.Sagardevkota:SwipeLeftOrRight:Tag'
+```
 
 
 Features
@@ -25,16 +26,17 @@ getGesture();
 First Initialize GestureDetector instance and pass the context(this) and instance of our class(which also requires context as an argument) as an argument.
 
 
+```
 
 GestureDetector mGestureDetector = new GestureDetector(this, new swipe(getApplicationContext()));
 
 
-
+```
 ## **Next Step**
 
 Then add touch listener to your view where you want to handle user's gestures
 
----
+```
 
    myview.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -44,13 +46,13 @@ Then add touch listener to your view where you want to handle user's gestures
         });
 
 
----
+```
 
 ## **Override onTouchEvent method in your activity and check if the event was consumed or not**
 
 
       
-
+``` java
 
     @Override
     public boolean onTouchEvent(MotionEvent event)
@@ -90,7 +92,7 @@ Then add touch listener to your view where you want to handle user's gestures
             return false;
     }
 
-    ---
+    ```
 
 
    ## **License**
