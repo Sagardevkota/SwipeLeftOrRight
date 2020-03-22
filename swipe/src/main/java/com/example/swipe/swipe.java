@@ -10,10 +10,14 @@ public class swipe extends GestureDetector.SimpleOnGestureListener{
     // Minimal x and y axis swipe distance.
     private static int MIN_SWIPE_DISTANCE_X = 100;
     private static int MIN_SWIPE_DISTANCE_Y = 100;
+    private static int MIN_SCROLL_DISTANCE_Y = 100;
 
     // Maximal x and y axis swipe distance.
     private static int MAX_SWIPE_DISTANCE_X = 1000;
     private static int MAX_SWIPE_DISTANCE_Y = 1000;
+    private static int MAX_SCROLL_DISTANCE_Y = 1000;
+
+
     private static String direction;
 
     Context context;
@@ -25,8 +29,12 @@ public class swipe extends GestureDetector.SimpleOnGestureListener{
 
     @Override
     public boolean onDown(MotionEvent e) {
+
+
+
         return false;
     }
+
 
     @Override
     public void onShowPress(MotionEvent e) {
@@ -35,16 +43,25 @@ public class swipe extends GestureDetector.SimpleOnGestureListener{
 
     @Override
     public boolean onSingleTapUp(MotionEvent e) {
+
+        setGesture("single tap up");
         return false;
     }
 
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+
+
+
+
+
+
         return false;
     }
 
     @Override
     public void onLongPress(MotionEvent e) {
+        setGesture("long press");
 
     }
 
@@ -66,17 +83,36 @@ public class swipe extends GestureDetector.SimpleOnGestureListener{
             if(deltaX > 0)
             {
                 Toast.makeText(context,"swiped to left",Toast.LENGTH_SHORT).show();
-                setDirection("left");
+                setGesture("left");
                 Log.d("Tag","swiped to left");
             }else
             {
 
                 Toast.makeText(context,"swiped to right",Toast.LENGTH_SHORT).show();
-                setDirection("right");
+                setGesture("right");
                 Log.d("Tag","swiped to right");
 
             }
         }
+
+        // Only when swipe distance between minimal and maximal distance value then we treat it as effective swipe
+        if((deltaYAbs >= MIN_SWIPE_DISTANCE_Y) && (deltaYAbs <= MAX_SWIPE_DISTANCE_Y))
+        {
+            if(deltaY > 0)
+            {
+                Toast.makeText(context,"swiped to down",Toast.LENGTH_SHORT).show();
+                setGesture("down");
+                Log.d("Tag","swiped to down");
+            }else
+            {
+
+                Toast.makeText(context,"swiped to up",Toast.LENGTH_SHORT).show();
+                setGesture("up");
+                Log.d("Tag","swiped to up");
+
+            }
+        }
+
 
 
         return true;
@@ -85,13 +121,13 @@ public class swipe extends GestureDetector.SimpleOnGestureListener{
 
     }
 
-    public void setDirection(String mdirection){
+    public void setGesture(String mdirection){
        this.direction=mdirection;
 
 
     }
 
-    public String getDirection(){
+    public String getGesture(){
        return  direction;
     }
 

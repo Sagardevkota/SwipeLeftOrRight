@@ -8,10 +8,13 @@ import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.swipe.swipe;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,15 +52,41 @@ public class MainActivity extends AppCompatActivity {
         boolean eventConsumed=mGestureDetector.onTouchEvent(event);
         if (eventConsumed)
         {
-            String direction= new swipe(getApplicationContext()).getDirection();
-            Log.d("direction is" ,direction);
-            if (direction.equals("left")){
-                //write your code if user swipes to left
+            String gesture= new swipe(getApplicationContext()).getGesture();
+            Log.d("direction is" ,gesture);
+            String img;
+
+            switch (gesture){
+
+                case "left":
+
+                 img="https://images.pexels.com/photos/212286/pexels-photo-212286.jpeg";
+                    showImage(img);
+
+                    break;
+                case "right":
+                  img="https://images.pexels.com/photos/7367/startup-photo.jpg";
+                    showImage(img);
+
+                    break;
+
+                case "down":
+                   img="https://images.pexels.com/photos/316465/pexels-photo-316465.jpeg";
+                    showImage(img);
+
+                    break;
+
+                case "up":
+                     img="https://images.pexels.com/photos/3082452/pexels-photo-3082452.jpeg";
+                    showImage(img);
+
+                    break;
+
+
+
+
             }
 
-            else {
-                //write your code if user swipes to right
-            }
 
 
             return true;
@@ -65,6 +94,37 @@ public class MainActivity extends AppCompatActivity {
         else
             return false;
     }
+
+    public void showImage(String image){
+
+        ImageView img=findViewById(R.id.img);
+
+        try{
+            String url=image;
+
+            Picasso.get()
+                    .load(url)
+                    .fit()
+                    .into(img, new Callback() {
+                        @Override
+                        public void onSuccess() {
+                            Log.d("Load","Successfull");
+
+                        }
+
+                        @Override
+                        public void onError(Exception e) {
+                            Log.d("Load",e.getMessage());
+                        }
+                    });}
+        catch (Exception e){
+            Log.d("error",e.getMessage());
+        }
+
+    }
+
+
+
 
 
 }
