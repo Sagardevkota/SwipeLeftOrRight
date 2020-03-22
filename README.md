@@ -39,6 +39,8 @@ Then add touch listener to your view where you want to handle user's gestures
 
 ```java
 
+  Linearlayout myview=findViewById(R.id.my_view);
+ //add listener to your view
    myview.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
