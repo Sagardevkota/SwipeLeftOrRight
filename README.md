@@ -16,9 +16,12 @@ Features
 * Swipe Up
 * Swipe Down
 
-Methods
+## **Methods**
+
+```java
 
 getGesture();
+```
 
 ## **Integration guide**
 
