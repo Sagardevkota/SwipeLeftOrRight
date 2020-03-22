@@ -51,7 +51,7 @@ Then add touch listener to your view where you want to handle user's gestures
 ## **Override onTouchEvent method in your activity and check if the event was consumed or not**
 
 
-      ```java
+     ```java
 
 
     @Override
@@ -93,7 +93,8 @@ Then add touch listener to your view where you want to handle user's gestures
     }
 
     
-
+```
+```
 
    ## **License**
 
