@@ -6,7 +6,7 @@ You can easily recognize user gesture and handle it in your code
 
 
 ```
-implementation 'com.github.Sagardevkota:SwipeLeftOrRight:Tag'
+implementation 'com.github.Sagardevkota:SwipeLeftOrRight:v1.0'
 ```
 
 Features
